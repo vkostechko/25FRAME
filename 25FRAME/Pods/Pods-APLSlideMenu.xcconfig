@@ -1,0 +1,1 @@
+PODS_APLSLIDEMENU_OTHER_LDFLAGS = -framework QuartzCore
