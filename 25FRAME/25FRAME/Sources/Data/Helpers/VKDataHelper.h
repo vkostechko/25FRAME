@@ -1,5 +1,5 @@
 //
-//  VKConstants.h
+//  VKDataHelper.h
 //  25FRAME
 //
 //  Created by Vyacheslav Kostechko on 6/22/14.
@@ -8,3 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+@interface VKDataHelper : NSObject
+
++ (VKDataHelper*)instance;
+
+- (NSDictionary *)dictionaryFromJsonData:(NSData*)data;
+
+@end

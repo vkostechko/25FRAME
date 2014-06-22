@@ -60,9 +60,7 @@ SINGLETON(VKRemoteFacade)
 
 - (void)loadMoviesWithCompletion:(CallbackWithDataAndError)completion {
     
-    if (completion) {
-        completion(nil, nil);
-    }
+    [self sendGETRequest:@"films/browse" parameters:[self dictionaryForParameter:@"limit" andValue:@"41"] callback:completion];
     
 }
 
@@ -70,11 +68,23 @@ SINGLETON(VKRemoteFacade)
 #pragma mark - Private
 
 - (void)sendGETRequest:(NSString *)url parameters:(NSDictionary*)params callback:(CallbackWithDataAndError)callback {
-    
+    [manager GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"request %@", operation.request.URL.absoluteString);
+        callback(responseObject, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request %@ error %@", operation.request.URL.absoluteString, error.description);
+        callback(nil, error);
+    }];
 }
 
 - (void)sendPOSTRequest:(NSString *)url parameters:(NSDictionary*)params callback:(CallbackWithDataAndError)callback {
-    
+    [manager POST:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"request %@", operation.request.URL.absoluteString);
+        callback(responseObject, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"request %@ error %@", operation.request.URL.absoluteString, error.description);
+        callback(nil, error);
+    }];
 }
 
 

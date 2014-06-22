@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		2F7852F31956ECE1009CCE48 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */; };
 		2F7852F41956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */; };
-		2F7852FF1956EFD3009CCE48 /* VKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7852FE1956EFD3009CCE48 /* VKConstants.m */; };
 		2F7853021956EFEF009CCE48 /* VKRemoteFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7853011956EFEF009CCE48 /* VKRemoteFacade.m */; };
 		2F7853051956F1E4009CCE48 /* VKPersistanceFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7853041956F1E4009CCE48 /* VKPersistanceFacade.m */; };
 		2F78530D1956FD9F009CCE48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F78530C1956FD9F009CCE48 /* Localizable.strings */; };
+		2F78531C19571562009CCE48 /* VKDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F78531B19571562009CCE48 /* VKDataHelper.m */; };
 		2FF6ED761955D76900493BC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED751955D76900493BC9 /* Foundation.framework */; };
 		2FF6ED781955D76900493BC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED771955D76900493BC9 /* CoreGraphics.framework */; };
 		2FF6ED7A1955D76900493BC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED791955D76900493BC9 /* UIKit.framework */; };
@@ -42,7 +42,6 @@
 		2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		2F7852FD1956EFD3009CCE48 /* VKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKConstants.h; sourceTree = "<group>"; };
-		2F7852FE1956EFD3009CCE48 /* VKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKConstants.m; sourceTree = "<group>"; };
 		2F7853001956EFEF009CCE48 /* VKRemoteFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = VKRemoteFacade.h; path = ../../Managers/VKRemoteFacade.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2F7853011956EFEF009CCE48 /* VKRemoteFacade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = VKRemoteFacade.m; path = ../../Managers/VKRemoteFacade.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		2F7853031956F1E4009CCE48 /* VKPersistanceFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKPersistanceFacade.h; sourceTree = "<group>"; };
@@ -50,6 +49,8 @@
 		2F7853091956FD03009CCE48 /* VKModelConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = VKModelConstants.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2F78530C1956FD9F009CCE48 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		2F785310195709BA009CCE48 /* VKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMacros.h; sourceTree = "<group>"; };
+		2F78531A19571562009CCE48 /* VKDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKDataHelper.h; sourceTree = "<group>"; };
+		2F78531B19571562009CCE48 /* VKDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKDataHelper.m; sourceTree = "<group>"; };
 		2FF6ED721955D76900493BC9 /* 25FRAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 25FRAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF6ED751955D76900493BC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2FF6ED771955D76900493BC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,6 +116,7 @@
 		2F7852EB1956ECE1009CCE48 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2F78531919571562009CCE48 /* Helpers */,
 				2F7853071956F21D009CCE48 /* Util */,
 				2F7852FB1956EE07009CCE48 /* Model */,
 				2F7852F91956EDBE009CCE48 /* Extensions */,
@@ -127,6 +129,11 @@
 		2F7852F01956ECE1009CCE48 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2F78531D19572226009CCE48 /* Menu */,
+				2F78531E19572226009CCE48 /* ActorsAndDirectors */,
+				2F78531F19572226009CCE48 /* History */,
+				2F78532019572226009CCE48 /* Favorites */,
+				2F78532119572226009CCE48 /* Movies */,
 				2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */,
 				2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */,
 			);
@@ -185,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				2F7852FD1956EFD3009CCE48 /* VKConstants.h */,
-				2F7852FE1956EFD3009CCE48 /* VKConstants.m */,
 				2F785310195709BA009CCE48 /* VKMacros.h */,
 			);
 			path = Util;
@@ -197,6 +203,50 @@
 				2F7853091956FD03009CCE48 /* VKModelConstants.h */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		2F78531919571562009CCE48 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2F78531A19571562009CCE48 /* VKDataHelper.h */,
+				2F78531B19571562009CCE48 /* VKDataHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		2F78531D19572226009CCE48 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		2F78531E19572226009CCE48 /* ActorsAndDirectors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ActorsAndDirectors;
+			sourceTree = "<group>";
+		};
+		2F78531F19572226009CCE48 /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		2F78532019572226009CCE48 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		2F78532119572226009CCE48 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Movies;
 			sourceTree = "<group>";
 		};
 		2FF6ED691955D76900493BC9 = {
@@ -410,7 +460,7 @@
 			files = (
 				2F7853021956EFEF009CCE48 /* VKRemoteFacade.m in Sources */,
 				2FF6ED821955D76900493BC9 /* main.m in Sources */,
-				2F7852FF1956EFD3009CCE48 /* VKConstants.m in Sources */,
+				2F78531C19571562009CCE48 /* VKDataHelper.m in Sources */,
 				2FF6ED861955D76900493BC9 /* VKAppDelegate.m in Sources */,
 				2F7853051956F1E4009CCE48 /* VKPersistanceFacade.m in Sources */,
 			);
