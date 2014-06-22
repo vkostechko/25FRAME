@@ -7,7 +7,28 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
+#import "VKModelConstants.h"
 
-@interface VKRemoteFacade : NSObject
+/**
+ *  The VKRemoteFacade class provides interface to work with server.
+ */
+@interface VKRemoteFacade : NSObject {
+    AFHTTPRequestOperationManager *manager;
+}
+
+/**
+ *  Creates if it's necessary and returns a VKRemoteFacade object.
+ *
+ *  @return An initialized VKRemoteFacade object, or nil if there was a problem creating the object.
+ */
++ (VKRemoteFacade*)instance;
+
+/**
+ *  Loads movies.
+ *
+ *  @param completion The CallbackWithDataAndError object used to handle request finishing.
+ */
+- (void)loadMoviesWithCompletion:(CallbackWithDataAndError)completion;
 
 @end
