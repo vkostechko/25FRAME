@@ -8,10 +8,20 @@
 
 #import "VKAppDelegate.h"
 
+#import "VKMainMenuVC.h"
+#import "VKMenuVC.h"
+
 @implementation VKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    VKMainMenuVC* rootVC = (VKMainMenuVC*)self.window.rootViewController;
+    rootVC.bouncing = NO;
+    rootVC.gestureSupport = APLSlideMenuGestureSupportDrag;
+    VKMenuVC *menuVC = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MENU];
+    [rootVC setMenuViewController:menuVC];
+//        rootVC.slideDelegate = menuVC;
+    rootVC.contentViewController = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MAIN_NAV];
     return YES;
 }
 

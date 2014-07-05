@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F45864F196827F000960F5C /* VKMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45864E196827F000960F5C /* VKMenuVC.m */; };
+		2F4586511968299300960F5C /* NavBarIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4586501968299300960F5C /* NavBarIcons.xcassets */; };
+		2F45865319682A9200960F5C /* MenuIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F45865219682A9200960F5C /* MenuIcons.xcassets */; };
+		2F4586561968335600960F5C /* VKMainMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4586551968335600960F5C /* VKMainMenuVC.m */; };
 		2F7852F31956ECE1009CCE48 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */; };
 		2F7852F41956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */; };
 		2F7853021956EFEF009CCE48 /* VKRemoteFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7853011956EFEF009CCE48 /* VKRemoteFacade.m */; };
@@ -39,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F45864D196827F000960F5C /* VKMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMenuVC.h; sourceTree = "<group>"; };
+		2F45864E196827F000960F5C /* VKMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMenuVC.m; sourceTree = "<group>"; };
+		2F4586501968299300960F5C /* NavBarIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NavBarIcons.xcassets; sourceTree = "<group>"; };
+		2F45865219682A9200960F5C /* MenuIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MenuIcons.xcassets; sourceTree = "<group>"; };
+		2F4586541968335600960F5C /* VKMainMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMainMenuVC.h; sourceTree = "<group>"; };
+		2F4586551968335600960F5C /* VKMainMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMainMenuVC.m; sourceTree = "<group>"; };
 		2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		2F7852FD1956EFD3009CCE48 /* VKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKConstants.h; sourceTree = "<group>"; };
@@ -99,6 +109,8 @@
 		2F7852E91956ECE1009CCE48 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2F4586501968299300960F5C /* NavBarIcons.xcassets */,
+				2F45865219682A9200960F5C /* MenuIcons.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -217,6 +229,10 @@
 		2F78531D19572226009CCE48 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				2F45864D196827F000960F5C /* VKMenuVC.h */,
+				2F45864E196827F000960F5C /* VKMenuVC.m */,
+				2F4586541968335600960F5C /* VKMainMenuVC.h */,
+				2F4586551968335600960F5C /* VKMainMenuVC.m */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -402,11 +418,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4586511968299300960F5C /* NavBarIcons.xcassets in Resources */,
 				2F78530D1956FD9F009CCE48 /* Localizable.strings in Resources */,
 				2F7852F31956ECE1009CCE48 /* MainStoryboard_iPad.storyboard in Resources */,
 				2FF6ED801955D76900493BC9 /* InfoPlist.strings in Resources */,
 				2F7852F41956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard in Resources */,
 				2FF6ED881955D76900493BC9 /* Images.xcassets in Resources */,
+				2F45865319682A9200960F5C /* MenuIcons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +478,8 @@
 			files = (
 				2F7853021956EFEF009CCE48 /* VKRemoteFacade.m in Sources */,
 				2FF6ED821955D76900493BC9 /* main.m in Sources */,
+				2F4586561968335600960F5C /* VKMainMenuVC.m in Sources */,
+				2F45864F196827F000960F5C /* VKMenuVC.m in Sources */,
 				2F78531C19571562009CCE48 /* VKDataHelper.m in Sources */,
 				2FF6ED861955D76900493BC9 /* VKAppDelegate.m in Sources */,
 				2F7853051956F1E4009CCE48 /* VKPersistanceFacade.m in Sources */,
