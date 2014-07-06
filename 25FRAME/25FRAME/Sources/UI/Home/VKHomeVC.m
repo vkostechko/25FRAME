@@ -11,6 +11,10 @@
 #import "VKMovieCollectionViewCell.h"
 #import "VKMainMenuVC.h"
 
+#import "VKRemoteFacade.h"
+#import "VKPersistanceFacade.h"
+#import "VKDataHelper.h"
+
 #define CELL_ID_TBVL(row) ((row == 0) ? CELL_ID_TOP_CELL : CELL_ID_MOVIE)
 #define CELL_ID_TOP_CELL @"CELL_ID_TOP_CELL"
 #define CELL_ID_MOVIE @"CELL_ID_Movie"
@@ -33,6 +37,14 @@
     // Do any additional setup after loading the view.
     [((VKMainMenuVC*)self.slideMenuController) setMenuDelegate:self];
 
+#warning - temp implementation for testing
+    [[VKRemoteFacade instance]loadMoviesWithCompletion:^(id data, NSError *error) {
+        NSArray* moviesArray = [[VKDataHelper instance]arrayFromJsonData:data];
+        [[VKPersistanceFacade instance]saveMoviesWithData:moviesArray andCompletionBlock:^(BOOL success, NSError *error) {
+            NSArray* movies = [[VKPersistanceFacade instance]allMovies];
+        }];
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -13,5 +13,5 @@
 + (VKDataHelper*)instance;
 
 - (NSDictionary *)dictionaryFromJsonData:(NSData*)data;
-
+- (NSArray *)arrayFromJsonData:(NSData*)data;
 @end

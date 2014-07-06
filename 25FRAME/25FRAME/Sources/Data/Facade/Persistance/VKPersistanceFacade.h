@@ -7,7 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MagicalRecord/CoreData+MagicalRecord.h>
+
+typedef MRSaveCompletionHandler VKPersistenceCompletionHandler;
+typedef void (^FetchCompletionHandler)(NSArray *results, NSError *error);
+typedef void (^FetchActionsCompletionHandler)(NSArray *userActions, NSArray *otherActions, NSError *error);
 
 @interface VKPersistanceFacade : NSObject
+
++ (VKPersistanceFacade*)instance;
+
+
+- (void)saveMoviesWithData:(NSArray*)data andCompletionBlock:(VKPersistenceCompletionHandler)completion;
+- (NSArray*)allMovies;
 
 @end

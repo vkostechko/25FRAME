@@ -11,19 +11,22 @@
 #import "VKMainMenuVC.h"
 #import "VKMenuVC.h"
 
+#import <MagicalRecord/CoreData+MagicalRecord.h>
+
+@interface VKAppDelegate()
+
+- (void)setupAppearance;
+
+@end
+
 @implementation VKAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [MagicalRecord setupAutoMigratingCoreDataStack];
+
+    [self setupAppearance];
     
-    VKMainMenuVC* rootVC = (VKMainMenuVC*)self.window.rootViewController;
-    rootVC.bouncing = YES;
-    rootVC.gestureSupport = APLSlideMenuGestureSupportDrag;
-    VKMenuVC *menuVC = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MENU];
-    [rootVC setMenuViewController:menuVC];
-    rootVC.slideDelegate = menuVC;
-    rootVC.contentViewController = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MAIN_NAV];
     return YES;
 }
 
@@ -52,6 +55,21 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - Private
+
+- (void)setupAppearance {
+
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    VKMainMenuVC* rootVC = (VKMainMenuVC*)self.window.rootViewController;
+    rootVC.bouncing = YES;
+    rootVC.gestureSupport = APLSlideMenuGestureSupportDrag;
+    VKMenuVC *menuVC = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MENU];
+    [rootVC setMenuViewController:menuVC];
+    rootVC.slideDelegate = menuVC;
+    rootVC.contentViewController = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MAIN_NAV];
 }
 
 @end

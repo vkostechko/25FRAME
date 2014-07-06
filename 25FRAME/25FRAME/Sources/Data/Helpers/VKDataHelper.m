@@ -37,6 +37,25 @@ SINGLETON(VKDataHelper)
     return jsonDict;
 }
 
+- (NSArray *)arrayFromJsonData:(NSData*)data {
+    if (!data) {
+        return nil;
+    }
+    
+    NSError* error;
+    NSArray* jsonDict = [NSJSONSerialization
+                              JSONObjectWithData:data
+                              options:kNilOptions
+                              error:&error];
+    if (!jsonDict){
+        NSLog(@"NSJSONSerialization error %@", error.description);
+        jsonDict = [NSArray array];
+    }
+    
+    return jsonDict;
+}
+
+
 #pragma mark - Private
 
 

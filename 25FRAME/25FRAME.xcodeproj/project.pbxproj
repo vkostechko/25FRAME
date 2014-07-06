@@ -22,6 +22,9 @@
 		2FE5CAFB1969885400BAD52B /* StubImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5CAFA1969885400BAD52B /* StubImages.xcassets */; };
 		2FE5CAFF1969899600BAD52B /* VKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CAFE1969899600BAD52B /* VKMovieCell.m */; };
 		2FE5CB0219698A4700BAD52B /* VKMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB0119698A4700BAD52B /* VKMovieCollectionViewCell.m */; };
+		2FE5CB051969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB031969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld */; };
+		2FE5CB081969A4C100BAD52B /* VKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB071969A4C100BAD52B /* VKMovie.m */; };
+		2FE5CB0B1969A71800BAD52B /* VKMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB0A1969A71800BAD52B /* VKMerge.m */; };
 		2FF6ED761955D76900493BC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED751955D76900493BC9 /* Foundation.framework */; };
 		2FF6ED781955D76900493BC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED771955D76900493BC9 /* CoreGraphics.framework */; };
 		2FF6ED7A1955D76900493BC9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED791955D76900493BC9 /* UIKit.framework */; };
@@ -75,6 +78,11 @@
 		2FE5CAFE1969899600BAD52B /* VKMovieCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovieCell.m; sourceTree = "<group>"; };
 		2FE5CB0019698A4700BAD52B /* VKMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovieCollectionViewCell.h; sourceTree = "<group>"; };
 		2FE5CB0119698A4700BAD52B /* VKMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovieCollectionViewCell.m; sourceTree = "<group>"; };
+		2FE5CB041969A44D00BAD52B /* 25FrameDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 25FrameDataModel.xcdatamodel; sourceTree = "<group>"; };
+		2FE5CB061969A4C100BAD52B /* VKMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovie.h; sourceTree = "<group>"; };
+		2FE5CB071969A4C100BAD52B /* VKMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovie.m; sourceTree = "<group>"; };
+		2FE5CB091969A71800BAD52B /* VKMerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMerge.h; sourceTree = "<group>"; };
+		2FE5CB0A1969A71800BAD52B /* VKMerge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMerge.m; sourceTree = "<group>"; };
 		2FF6ED721955D76900493BC9 /* 25FRAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 25FRAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF6ED751955D76900493BC9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2FF6ED771955D76900493BC9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -212,6 +220,9 @@
 		2F7852FB1956EE07009CCE48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2FE5CB031969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld */,
+				2FE5CB061969A4C100BAD52B /* VKMovie.h */,
+				2FE5CB071969A4C100BAD52B /* VKMovie.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				2F7853091956FD03009CCE48 /* VKModelConstants.h */,
+				2FE5CB091969A71800BAD52B /* VKMerge.h */,
+				2FE5CB0A1969A71800BAD52B /* VKMerge.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -530,10 +543,13 @@
 				2F4586561968335600960F5C /* VKMainMenuVC.m in Sources */,
 				2FE5CB0219698A4700BAD52B /* VKMovieCollectionViewCell.m in Sources */,
 				2F45864F196827F000960F5C /* VKMenuVC.m in Sources */,
+				2FE5CB051969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld in Sources */,
+				2FE5CB0B1969A71800BAD52B /* VKMerge.m in Sources */,
 				2FE5CAFF1969899600BAD52B /* VKMovieCell.m in Sources */,
 				2F78531C19571562009CCE48 /* VKDataHelper.m in Sources */,
 				2FE5CAF5196971E900BAD52B /* VKMenuCell.m in Sources */,
 				2FF6ED861955D76900493BC9 /* VKAppDelegate.m in Sources */,
+				2FE5CB081969A4C100BAD52B /* VKMovie.m in Sources */,
 				2F7853051956F1E4009CCE48 /* VKPersistanceFacade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -749,6 +765,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2FE5CB031969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2FE5CB041969A44D00BAD52B /* 25FrameDataModel.xcdatamodel */,
+			);
+			currentVersion = 2FE5CB041969A44D00BAD52B /* 25FrameDataModel.xcdatamodel */;
+			path = 25FrameDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2FF6ED6A1955D76900493BC9 /* Project object */;
 }
