@@ -7,6 +7,7 @@
 //
 
 #import "VKMenuVC.h"
+#import "VKMainMenuVC.h"
 
 @interface VKMenuVC ()
 
@@ -34,7 +35,13 @@
 }
 
 #pragma mark - UITableViewDelegate
+
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([((VKMainMenuVC*)self.slideMenuController).menuDelegate respondsToSelector:@selector(menuDidSelectItem:)]) {
+        UITableViewCell* selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+        [((VKMainMenuVC*)self.slideMenuController).menuDelegate menuDidSelectItem:selectedCell.tag];
+    }
     
 }
 

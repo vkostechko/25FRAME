@@ -16,7 +16,7 @@
 #define CELL_ID_MOVIE @"CELL_ID_Movie"
 #define CELL_ID_MOVIECOLLECTIONVIEW @"CELL_ID_MovieCollectionView"
 
-@interface VKHomeVC ()<UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface VKHomeVC ()<UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, VKMenuDelegate>
 
 - (IBAction)btnMenuDidTap:(id)sender;
 - (IBAction)btnMoviesDidTap:(id)sender;
@@ -31,6 +31,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [((VKMainMenuVC*)self.slideMenuController) setMenuDelegate:self];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,6 +86,16 @@
 }
 
 #pragma mark - UICollectionViewDelegate
+
+
+#pragma mark - VKMenuDelegate
+
+- (void)menuDidSelectItem:(MenuItem)menuItem {
+    
+    NSLog(@"%i", menuItem);
+}
+
+#pragma mark - Private
 
 
 @end

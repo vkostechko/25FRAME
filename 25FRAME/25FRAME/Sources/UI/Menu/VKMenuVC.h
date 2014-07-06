@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "APLSlideMenuViewController.h"
 
-@interface VKMenuVC : UITableViewController
+@interface VKMenuVC : UITableViewController <APLSlideMenuViewControllerDelegate>
 
 @end

@@ -11,7 +11,7 @@
 @protocol VKMenuDelegate <NSObject>
 
 @required
-//- (void)menuDidSelectItem:(MenuItem)menuItem;
+- (void)menuDidSelectItem:(MenuItem)menuItem;
 
 @end
 

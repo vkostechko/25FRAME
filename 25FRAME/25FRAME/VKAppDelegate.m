@@ -22,7 +22,7 @@
     rootVC.gestureSupport = APLSlideMenuGestureSupportDrag;
     VKMenuVC *menuVC = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MENU];
     [rootVC setMenuViewController:menuVC];
-//        rootVC.slideDelegate = menuVC;
+    rootVC.slideDelegate = menuVC;
     rootVC.contentViewController = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MAIN_NAV];
     return YES;
 }
