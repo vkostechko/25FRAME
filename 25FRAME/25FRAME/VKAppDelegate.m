@@ -15,8 +15,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     VKMainMenuVC* rootVC = (VKMainMenuVC*)self.window.rootViewController;
-    rootVC.bouncing = NO;
+    rootVC.bouncing = YES;
     rootVC.gestureSupport = APLSlideMenuGestureSupportDrag;
     VKMenuVC *menuVC = [[rootVC storyboard] instantiateViewControllerWithIdentifier:VC_ID_MENU];
     [rootVC setMenuViewController:menuVC];
