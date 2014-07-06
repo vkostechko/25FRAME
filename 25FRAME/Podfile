@@ -16,3 +16,7 @@ pod 'AFNetworking', '~> 2.2'
 pod 'UIKitCategoryAdditions', '~> 0.0.1'
 
 pod 'SDWebImage', '~> 3.5.2'
+
+target :'25FRAMETests', :exclusive => true do
+  pod 'Kiwi/XCTest'
+end

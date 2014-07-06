@@ -1,0 +1,6 @@
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#endif
+
+#import "Pods-25FRAMETests-environment.h"
+#import <XCTest/XCTest.h>
