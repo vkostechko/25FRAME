@@ -52,4 +52,4 @@ SPEC CHECKSUMS:
   SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
   UIKitCategoryAdditions: 04a8cade2ebf162a82eca9838fb2d1d1d7101e8c
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
