@@ -7,6 +7,7 @@
 //
 
 #import "VKMovie.h"
+#import "VKGenre.h"
 #import "VKMovieParticipant.h"
 #import "VKRating.h"
 
@@ -22,5 +23,6 @@
 @dynamic type;
 @dynamic ratings;
 @dynamic participants;
+@dynamic genres;
 
 @end

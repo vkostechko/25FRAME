@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class VKMovieParticipant, VKRating;
+@class VKGenre, VKMovieParticipant, VKRating;
 
 @interface VKMovie : NSManagedObject
 
@@ -22,6 +22,7 @@
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) VKRating *ratings;
 @property (nonatomic, retain) NSSet *participants;
+@property (nonatomic, retain) NSSet *genres;
 @end
 
 @interface VKMovie (CoreDataGeneratedAccessors)
@@ -30,5 +31,10 @@
 - (void)removeParticipantsObject:(VKMovieParticipant *)value;
 - (void)addParticipants:(NSSet *)values;
 - (void)removeParticipants:(NSSet *)values;
+
+- (void)addGenresObject:(VKGenre *)value;
+- (void)removeGenresObject:(VKGenre *)value;
+- (void)addGenres:(NSSet *)values;
+- (void)removeGenres:(NSSet *)values;
 
 @end

@@ -7,11 +7,13 @@
 //
 
 #import "VKGenre.h"
+#import "VKMovie.h"
 
 
 @implementation VKGenre
 
 @dynamic genreId;
 @dynamic name;
+@dynamic movies;
 
 @end

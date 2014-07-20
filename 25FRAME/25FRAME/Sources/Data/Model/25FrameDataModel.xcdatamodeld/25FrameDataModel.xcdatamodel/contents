@@ -3,6 +3,7 @@
     <entity name="VKGenre" representedClassName="VKGenre" syncable="YES">
         <attribute name="genreId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="movies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VKMovie" inverseName="genres" inverseEntity="VKMovie" syncable="YES"/>
     </entity>
     <entity name="VKMovie" representedClassName="Movie" syncable="YES">
         <attribute name="bestTorrentQuality" optional="YES" attributeType="String" syncable="YES"/>
@@ -12,6 +13,7 @@
         <attribute name="originalName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="genres" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VKGenre" inverseName="movies" inverseEntity="VKGenre" syncable="YES"/>
         <relationship name="participants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VKMovieParticipant" inverseName="movie" inverseEntity="VKMovieParticipant" syncable="YES"/>
         <relationship name="ratings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VKRating" inverseName="movie" inverseEntity="VKRating" syncable="YES"/>
     </entity>
@@ -34,8 +36,8 @@
         <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VKMovie" inverseName="ratings" inverseEntity="VKMovie" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VKMovie" positionX="-63" positionY="-18" width="128" height="178"/>
-        <element name="VKGenre" positionX="-407" positionY="18" width="128" height="75"/>
+        <element name="VKMovie" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="VKGenre" positionX="-261" positionY="36" width="128" height="88"/>
         <element name="VKRating" positionX="169" positionY="-54" width="128" height="193"/>
         <element name="VKMovieParticipant" positionX="-252" positionY="207" width="128" height="103"/>
     </elements>

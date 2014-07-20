@@ -41,6 +41,9 @@ static NSString * const kKeyWriter = @"writer";
 @interface VKPersistanceFacade ()
 
 - (void)createAndAddParticipantsToMovie:(VKMovie*)movie withData:(NSArray*)data type:(MovieParticipantType)type inContext:(NSManagedObjectContext*)context;
+- (void)createAndAddGenresToMovie:(VKMovie*)movie withData:(NSArray*)data inContext:(NSManagedObjectContext*)context;
+
+- (VKGenre*)genreById:(NSNumber*)genreId inContext:(NSManagedObjectContext*)context;
 
 @end
 
@@ -74,6 +77,12 @@ SINGLETON(VKPersistanceFacade)
             movie.duration = data[kKeyDuration];
             movie.bestTorrentQuality = data[kKeyBestTorrentQuality];
             movie.type = data[kKeyType];
+            
+            NSArray* genres = data[kKeyGenres];
+            if (genres) {
+                [movie removeGenres:movie.genres];
+                [self createAndAddGenresToMovie:movie withData:genres inContext:localContext];
+            }
             
             NSDictionary* ratings = data[kKeyRatings];
             if (ratings) {
@@ -167,6 +176,26 @@ SINGLETON(VKPersistanceFacade)
         
         [movie addParticipantsObject:participant];
     }
+}
+
+- (void)createAndAddGenresToMovie:(VKMovie*)movie withData:(NSArray*)data inContext:(NSManagedObjectContext*)context {
+    
+    for (NSDictionary* genreData in data) {
+        VKGenre* genre = [self genreById:genreData[kKeyID] inContext:context];
+        if (!genre) {
+           genre = [VKGenre MR_createInContext:context];
+        }
+        genre.genreId = genreData[kKeyID];
+        genre.name = genreData[kKeyName];
+        
+        [movie addGenresObject:genre];
+    }
+    
+}
+
+- (VKGenre*)genreById:(NSNumber*)genreId inContext:(NSManagedObjectContext*)context {
+    VKGenre* genre = [VKGenre MR_findFirstByAttribute:@"genreId" withValue:genreId inContext:context];
+    return genre;
 }
 
 @end
