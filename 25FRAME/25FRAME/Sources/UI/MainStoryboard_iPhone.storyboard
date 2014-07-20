@@ -336,6 +336,11 @@
                                                 <constraint firstAttribute="bottom" secondItem="Xri-km-ukY" secondAttribute="bottom" id="yIY-HK-adf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imgvAvatar" destination="ZCF-m5-jw6" id="jg7-IS-I2M"/>
+                                            <outlet property="lblGenre" destination="biw-U4-2dm" id="Jx8-gZ-2yD"/>
+                                            <outlet property="lblTitle" destination="LPn-PR-DcF" id="jfu-KE-Tjg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -372,6 +377,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tbvMovies" destination="dtq-zU-EY7" id="Igl-7s-ItK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZ3-it-jiP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

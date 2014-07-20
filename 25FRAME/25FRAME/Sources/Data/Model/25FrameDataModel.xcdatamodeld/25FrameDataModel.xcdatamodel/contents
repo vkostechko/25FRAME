@@ -5,15 +5,38 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="VKMovie" representedClassName="Movie" syncable="YES">
-        <attribute name="bestTorrentQuality" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bestTorrentQuality" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="movieID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="originalname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originalName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="year" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="participants" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VKMovieParticipant" inverseName="movie" inverseEntity="VKMovieParticipant" syncable="YES"/>
+        <relationship name="ratings" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VKRating" inverseName="movie" inverseEntity="VKRating" syncable="YES"/>
+    </entity>
+    <entity name="VKMovieParticipant" representedClassName="VKMovieParticipant" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VKMovie" inverseName="participants" inverseEntity="VKMovie" syncable="YES"/>
+    </entity>
+    <entity name="VKRating" representedClassName="VKRating" syncable="YES">
+        <attribute name="imdbId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imdbRate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="imdbVotes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kinopoiskId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kinopoiskRate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="kinopoiskVotes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tvcomId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tvcomRate" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="tvcomVotes" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="movie" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VKMovie" inverseName="ratings" inverseEntity="VKMovie" syncable="YES"/>
     </entity>
     <elements>
-        <element name="VKMovie" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="VKGenre" positionX="-63" positionY="27" width="128" height="75"/>
+        <element name="VKMovie" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="VKGenre" positionX="-407" positionY="18" width="128" height="75"/>
+        <element name="VKRating" positionX="169" positionY="-54" width="128" height="193"/>
+        <element name="VKMovieParticipant" positionX="-252" positionY="207" width="128" height="103"/>
     </elements>
 </model>

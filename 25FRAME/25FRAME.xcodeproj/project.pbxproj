@@ -14,6 +14,9 @@
 		2F4FEB00197BF4E80047DC59 /* VKGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEAFF197BF4E80047DC59 /* VKGenre.m */; };
 		2F4FEB03197BF8FA0047DC59 /* VKDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB02197BF8FA0047DC59 /* VKDataProvider.m */; };
 		2F4FEB06197BFD180047DC59 /* VKDeviceHardwareHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB05197BFD180047DC59 /* VKDeviceHardwareHelper.m */; };
+		2F4FEB09197C12190047DC59 /* VKRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB08197C12190047DC59 /* VKRating.m */; };
+		2F4FEB12197C16520047DC59 /* VKMovieParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB11197C16520047DC59 /* VKMovieParticipant.m */; };
+		2F4FEB15197C16530047DC59 /* VKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB14197C16530047DC59 /* VKMovie.m */; };
 		2F7852F31956ECE1009CCE48 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */; };
 		2F7852F41956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */; };
 		2F7853021956EFEF009CCE48 /* VKRemoteFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7853011956EFEF009CCE48 /* VKRemoteFacade.m */; };
@@ -26,7 +29,6 @@
 		2FE5CAFF1969899600BAD52B /* VKMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CAFE1969899600BAD52B /* VKMovieCell.m */; };
 		2FE5CB0219698A4700BAD52B /* VKMovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB0119698A4700BAD52B /* VKMovieCollectionViewCell.m */; };
 		2FE5CB051969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB031969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld */; };
-		2FE5CB081969A4C100BAD52B /* VKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB071969A4C100BAD52B /* VKMovie.m */; };
 		2FE5CB0B1969A71800BAD52B /* VKMerge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CB0A1969A71800BAD52B /* VKMerge.m */; };
 		2FF6ED761955D76900493BC9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED751955D76900493BC9 /* Foundation.framework */; };
 		2FF6ED781955D76900493BC9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FF6ED771955D76900493BC9 /* CoreGraphics.framework */; };
@@ -68,6 +70,12 @@
 		2F4FEB02197BF8FA0047DC59 /* VKDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKDataProvider.m; sourceTree = "<group>"; };
 		2F4FEB04197BFD180047DC59 /* VKDeviceHardwareHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKDeviceHardwareHelper.h; sourceTree = "<group>"; };
 		2F4FEB05197BFD180047DC59 /* VKDeviceHardwareHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKDeviceHardwareHelper.m; sourceTree = "<group>"; };
+		2F4FEB07197C12190047DC59 /* VKRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKRating.h; sourceTree = "<group>"; };
+		2F4FEB08197C12190047DC59 /* VKRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKRating.m; sourceTree = "<group>"; };
+		2F4FEB10197C16520047DC59 /* VKMovieParticipant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovieParticipant.h; sourceTree = "<group>"; };
+		2F4FEB11197C16520047DC59 /* VKMovieParticipant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovieParticipant.m; sourceTree = "<group>"; };
+		2F4FEB13197C16530047DC59 /* VKMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovie.h; sourceTree = "<group>"; };
+		2F4FEB14197C16530047DC59 /* VKMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovie.m; sourceTree = "<group>"; };
 		2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		2F7852FD1956EFD3009CCE48 /* VKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKConstants.h; sourceTree = "<group>"; };
@@ -90,8 +98,6 @@
 		2FE5CB0019698A4700BAD52B /* VKMovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovieCollectionViewCell.h; sourceTree = "<group>"; };
 		2FE5CB0119698A4700BAD52B /* VKMovieCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovieCollectionViewCell.m; sourceTree = "<group>"; };
 		2FE5CB041969A44D00BAD52B /* 25FrameDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = 25FrameDataModel.xcdatamodel; sourceTree = "<group>"; };
-		2FE5CB061969A4C100BAD52B /* VKMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovie.h; sourceTree = "<group>"; };
-		2FE5CB071969A4C100BAD52B /* VKMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovie.m; sourceTree = "<group>"; };
 		2FE5CB091969A71800BAD52B /* VKMerge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMerge.h; sourceTree = "<group>"; };
 		2FE5CB0A1969A71800BAD52B /* VKMerge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMerge.m; sourceTree = "<group>"; };
 		2FF6ED721955D76900493BC9 /* 25FRAME.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 25FRAME.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,10 +242,14 @@
 			isa = PBXGroup;
 			children = (
 				2FE5CB031969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld */,
+				2F4FEB13197C16530047DC59 /* VKMovie.h */,
+				2F4FEB14197C16530047DC59 /* VKMovie.m */,
+				2F4FEB10197C16520047DC59 /* VKMovieParticipant.h */,
+				2F4FEB11197C16520047DC59 /* VKMovieParticipant.m */,
+				2F4FEB07197C12190047DC59 /* VKRating.h */,
+				2F4FEB08197C12190047DC59 /* VKRating.m */,
 				2F4FEAFE197BF4E80047DC59 /* VKGenre.h */,
 				2F4FEAFF197BF4E80047DC59 /* VKGenre.m */,
-				2FE5CB061969A4C100BAD52B /* VKMovie.h */,
-				2FE5CB071969A4C100BAD52B /* VKMovie.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -592,10 +602,13 @@
 			files = (
 				2F7853021956EFEF009CCE48 /* VKRemoteFacade.m in Sources */,
 				2F4FEB03197BF8FA0047DC59 /* VKDataProvider.m in Sources */,
+				2F4FEB15197C16530047DC59 /* VKMovie.m in Sources */,
 				2F4FEB06197BFD180047DC59 /* VKDeviceHardwareHelper.m in Sources */,
 				2FF6ED821955D76900493BC9 /* main.m in Sources */,
 				2FE5CAF91969806200BAD52B /* VKHomeVC.m in Sources */,
+				2F4FEB09197C12190047DC59 /* VKRating.m in Sources */,
 				2F4586561968335600960F5C /* VKMainMenuVC.m in Sources */,
+				2F4FEB12197C16520047DC59 /* VKMovieParticipant.m in Sources */,
 				2FE5CB0219698A4700BAD52B /* VKMovieCollectionViewCell.m in Sources */,
 				2F45864F196827F000960F5C /* VKMenuVC.m in Sources */,
 				2FE5CB051969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld in Sources */,
@@ -605,7 +618,6 @@
 				2FE5CAF5196971E900BAD52B /* VKMenuCell.m in Sources */,
 				2FF6ED861955D76900493BC9 /* VKAppDelegate.m in Sources */,
 				2F4FEB00197BF4E80047DC59 /* VKGenre.m in Sources */,
-				2FE5CB081969A4C100BAD52B /* VKMovie.m in Sources */,
 				2F7853051956F1E4009CCE48 /* VKPersistanceFacade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

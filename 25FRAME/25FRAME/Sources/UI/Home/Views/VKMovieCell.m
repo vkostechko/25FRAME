@@ -8,16 +8,17 @@
 
 #import "VKMovieCell.h"
 
+@interface VKMovieCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgvAvatar;
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblGenre;
+
+@end
+
 @implementation VKMovieCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
+#pragma mark - Life cycle
 
 - (void)awakeFromNib
 {
@@ -29,6 +30,18 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+#pragma mark - Override setters
+
+- (void)setMovie:(VKMovie *)movie {
+    if (_movie != movie) {
+        _movie = movie;
+        
+        self.lblTitle.text = _movie.name;
+        self.lblGenre.text = _movie.originalName;
+        
+    }
 }
 
 @end

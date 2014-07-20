@@ -107,3 +107,13 @@ typedef enum {
 
 #pragma mark - Persistance
 
+typedef enum {
+    MovieParticipantTypeUndefined = -1,
+    MovieParticipantTypeActor = 1,
+    MovieParticipantTypeComposer,
+    MovieParticipantTypeDirector,
+    MovieParticipantTypeOperator,
+    MovieParticipantTypeProducer,
+    MovieParticipantTypeWriter
+}MovieParticipantType;
+

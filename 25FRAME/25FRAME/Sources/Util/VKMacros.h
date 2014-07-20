@@ -29,3 +29,6 @@ static className *_##classNameInstance; \
 #define COLOR_MENU_TBLV_BACKGROUND [UIColor colorWithRed:36./255 green:35./255 blue:54./255 alpha:1.]
 #define COLOR_MENU_CELL_BACKGROUND [UIColor colorWithRed:54./255 green:53./255 blue:82./255 alpha:1.]
 #define COLOR_MENU_CELL_SELECTED_BACKGROUND [UIColor colorWithRed:32./255 green:53./255 blue:82./255 alpha:1.]
+
+
+#define NULL_TO_NIL(obj) ({ __typeof__ (obj) __obj = (obj); __obj == [NSNull null] ? nil : obj; })

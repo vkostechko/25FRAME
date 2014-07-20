@@ -2,20 +2,25 @@
 //  VKMovie.m
 //  25FRAME
 //
-//  Created by Vyacheslav Kostechko on 7/6/14.
+//  Created by Vyacheslav Kostechko on 7/20/14.
 //  Copyright (c) 2014 Vyacheslav Kostechko. All rights reserved.
 //
 
 #import "VKMovie.h"
+#import "VKMovieParticipant.h"
+#import "VKRating.h"
 
 
 @implementation VKMovie
 
-@dynamic movieID;
-@dynamic year;
-@dynamic name;
 @dynamic bestTorrentQuality;
 @dynamic duration;
-@dynamic originalname;
+@dynamic movieID;
+@dynamic name;
+@dynamic originalName;
+@dynamic year;
+@dynamic type;
+@dynamic ratings;
+@dynamic participants;
 
 @end
