@@ -10,6 +10,7 @@
 #import "VKGenre.h"
 #import "VKMovieParticipant.h"
 #import "VKRating.h"
+#import "VKModelConstants.h"
 
 
 @implementation VKMovie
@@ -24,5 +25,11 @@
 @dynamic ratings;
 @dynamic participants;
 @dynamic genres;
+
+- (NSURL*)posterURLWithWidth:(MoviePosterWidth)width {
+    NSString* urlString = [kMediaBaseURL stringByAppendingPathComponent:MOVIE_POSTER_URL(self.movieID, width)];
+    NSURL* url = [NSURL URLWithString:urlString];
+    return url;
+}
 
 @end

@@ -42,3 +42,10 @@ typedef enum {
     MenuItemHistory = TAG_VIEW_HISTORY
 }MenuItem;
 
+//(width = 207, 60, 40)
+typedef enum {
+    MoviePosterWidthUndefined = -1,
+    MoviePosterWidth40 = 40,
+    MoviePosterWidth60 = 60,
+    MoviePosterWidth207 = 207
+}MoviePosterWidth;

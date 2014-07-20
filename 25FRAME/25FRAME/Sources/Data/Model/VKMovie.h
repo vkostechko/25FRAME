@@ -23,6 +23,9 @@
 @property (nonatomic, retain) VKRating *ratings;
 @property (nonatomic, retain) NSSet *participants;
 @property (nonatomic, retain) NSSet *genres;
+
+- (NSURL*)posterURLWithWidth:(MoviePosterWidth)width;
+
 @end
 
 @interface VKMovie (CoreDataGeneratedAccessors)

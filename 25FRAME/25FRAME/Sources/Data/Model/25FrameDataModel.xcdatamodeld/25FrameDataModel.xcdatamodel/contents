@@ -5,7 +5,7 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="movies" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="VKMovie" inverseName="genres" inverseEntity="VKMovie" syncable="YES"/>
     </entity>
-    <entity name="VKMovie" representedClassName="Movie" syncable="YES">
+    <entity name="VKMovie" representedClassName="VKMovie" syncable="YES">
         <attribute name="bestTorrentQuality" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="duration" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="movieID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>

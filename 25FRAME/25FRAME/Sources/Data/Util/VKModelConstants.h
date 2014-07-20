@@ -15,7 +15,9 @@
 typedef void(^CallbackWithDataAndError)(id data, NSError *error);
 
 static NSString * const kBaseURL = @"http://api.kinobaza.tv";
-static NSString * const kMoviePosterURL = @"/films/<film_id>/poster/<width>.jpg";
+static NSString * const kMediaBaseURL = @"http://media.kinobaza.tv";
+static NSString * const kMoviePosterURL = @"/films/%@/poster/%i.jpg";
+#define MOVIE_POSTER_URL(movieId, width) ([NSString stringWithFormat:kMoviePosterURL, movieId, width])
 static NSString * const kActorPhotoURL = @"/persons/<person_id>/photo/60.jpg";
 static NSString * const kUserAvatarURL = @"/users/<user_id>/avatar/<width>.png";
 
@@ -74,14 +76,6 @@ typedef enum {
     ServerRespponseCodeWrongRequest = 405,
     ServerRespponseCodEexceededRequeststheNumber = 503
 }ServerRespponseCode;
-
-//(width = 207, 60, 40)
-typedef enum {
-    MoviePosterWidthUndefined = -1,
-    MoviePosterWidth40 = 40,
-    MoviePosterWidth60 = 60,
-    MoviePosterWidth207 = 207
-}MoviePosterWidth;
 
 typedef enum {
     ActorPhotoWidthUndefined = -1,

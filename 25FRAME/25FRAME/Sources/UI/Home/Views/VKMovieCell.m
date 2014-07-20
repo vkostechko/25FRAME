@@ -7,6 +7,7 @@
 //
 
 #import "VKMovieCell.h"
+#import "SDWebImageManager.h"
 
 @interface VKMovieCell ()
 
@@ -40,6 +41,14 @@
         
         self.lblTitle.text = _movie.name;
         self.lblGenre.text = _movie.originalName;
+        NSURL* posterURL = [_movie posterURLWithWidth:(MoviePosterWidth60)];
+        [[SDWebImageManager sharedManager]downloadWithURL:posterURL
+                                                  options:SDWebImageProgressiveDownload
+                                                 progress:^(NSInteger receivedSize, NSInteger expectedSize) {}
+                                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
+                                                    self.imageView.image = image;
+                                                    [self setNeedsLayout];
+        }];
         
     }
 }
