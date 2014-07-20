@@ -46,7 +46,7 @@
                                                   options:SDWebImageProgressiveDownload
                                                  progress:^(NSInteger receivedSize, NSInteger expectedSize) {}
                                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
-                                                    self.imageView.image = image;
+                                                    self.imgvAvatar.image = image;
                                                     [self setNeedsLayout];
         }];
         
