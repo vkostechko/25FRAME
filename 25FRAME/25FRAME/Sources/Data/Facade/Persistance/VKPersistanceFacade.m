@@ -18,6 +18,7 @@
 static NSString * const kKeyID = @"id";
 static NSString * const kKeyName = @"name";
 static NSString * const kKeyOriginalName = @"original_name";
+static NSString * const kKeyDescription = @"description";
 static NSString * const kKeyDuration = @"duration";
 static NSString * const kKeyType = @"type";
 static NSString * const kKeyYear = @"year";
@@ -72,6 +73,7 @@ SINGLETON(VKPersistanceFacade)
             //TODO: update movie params
             movie.name = data[kKeyName];
             movie.originalName = NULL_TO_NIL(data[kKeyOriginalName]);
+            movie.movieDescription = NULL_TO_NIL(data[kKeyDescription]);
             movie.duration = data[kKeyDuration];
             movie.bestTorrentQuality = data[kKeyBestTorrentQuality];
             movie.type = data[kKeyType];

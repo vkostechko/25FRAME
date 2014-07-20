@@ -13,6 +13,7 @@
 
 @interface VKMovie : NSManagedObject
 
+@property (nonatomic, retain) NSString * movieDescription;
 @property (nonatomic, retain) NSString * bestTorrentQuality;
 @property (nonatomic, retain) NSNumber * duration;
 @property (nonatomic, retain) NSNumber * movieID;

@@ -60,7 +60,7 @@ SINGLETON(VKRemoteFacade)
 #pragma mark - Movies
 - (void)loadMoviesWithCompletion:(CallbackWithDataAndError)completion {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    [params addEntriesFromDictionary:[self dictionaryForParameter:kKeyMoviesQueryMask andValue:@45]];
+    [params addEntriesFromDictionary:[self dictionaryForParameter:kKeyMoviesQueryMask andValue:@47]];
     [params addEntriesFromDictionary:[self dictionaryForParameter:kKeyLimit andValue:@10]];
     
     [self sendGETRequest:kBrowseMoviesURL parameters:params callback:completion];

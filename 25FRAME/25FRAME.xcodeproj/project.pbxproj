@@ -17,6 +17,8 @@
 		2F4FEB12197C16520047DC59 /* VKMovieParticipant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB11197C16520047DC59 /* VKMovieParticipant.m */; };
 		2F4FEB18197C217A0047DC59 /* VKGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB17197C217A0047DC59 /* VKGenre.m */; };
 		2F4FEB1B197C217A0047DC59 /* VKMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB1A197C217A0047DC59 /* VKMovie.m */; };
+		2F4FEB1E197C32B50047DC59 /* UILabel+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB1D197C32B50047DC59 /* UILabel+CustomFont.m */; };
+		2F4FEB21197C33820047DC59 /* VKMovieDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4FEB20197C33820047DC59 /* VKMovieDetailsVC.m */; };
 		2F7852F31956ECE1009CCE48 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */; };
 		2F7852F41956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */; };
 		2F7853021956EFEF009CCE48 /* VKRemoteFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7853011956EFEF009CCE48 /* VKRemoteFacade.m */; };
@@ -76,6 +78,10 @@
 		2F4FEB17197C217A0047DC59 /* VKGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKGenre.m; sourceTree = "<group>"; };
 		2F4FEB19197C217A0047DC59 /* VKMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovie.h; sourceTree = "<group>"; };
 		2F4FEB1A197C217A0047DC59 /* VKMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovie.m; sourceTree = "<group>"; };
+		2F4FEB1C197C32B50047DC59 /* UILabel+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+CustomFont.h"; sourceTree = "<group>"; };
+		2F4FEB1D197C32B50047DC59 /* UILabel+CustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+CustomFont.m"; sourceTree = "<group>"; };
+		2F4FEB1F197C33820047DC59 /* VKMovieDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMovieDetailsVC.h; sourceTree = "<group>"; };
+		2F4FEB20197C33820047DC59 /* VKMovieDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMovieDetailsVC.m; sourceTree = "<group>"; };
 		2F7852F11956ECE1009CCE48 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		2F7852F21956ECE1009CCE48 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		2F7852FD1956EFD3009CCE48 /* VKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKConstants.h; sourceTree = "<group>"; };
@@ -234,6 +240,8 @@
 		2F7852F91956EDBE009CCE48 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2F4FEB1C197C32B50047DC59 /* UILabel+CustomFont.h */,
+				2F4FEB1D197C32B50047DC59 /* UILabel+CustomFont.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +328,8 @@
 		2F78532119572226009CCE48 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				2F4FEB1F197C33820047DC59 /* VKMovieDetailsVC.h */,
+				2F4FEB20197C33820047DC59 /* VKMovieDetailsVC.m */,
 			);
 			path = Movies;
 			sourceTree = "<group>";
@@ -606,11 +616,13 @@
 				2F4FEB1B197C217A0047DC59 /* VKMovie.m in Sources */,
 				2F4FEB06197BFD180047DC59 /* VKDeviceHardwareHelper.m in Sources */,
 				2FF6ED821955D76900493BC9 /* main.m in Sources */,
+				2F4FEB1E197C32B50047DC59 /* UILabel+CustomFont.m in Sources */,
 				2FE5CAF91969806200BAD52B /* VKHomeVC.m in Sources */,
 				2F4FEB09197C12190047DC59 /* VKRating.m in Sources */,
 				2F4586561968335600960F5C /* VKMainMenuVC.m in Sources */,
 				2F4FEB12197C16520047DC59 /* VKMovieParticipant.m in Sources */,
 				2FE5CB0219698A4700BAD52B /* VKMovieCollectionViewCell.m in Sources */,
+				2F4FEB21197C33820047DC59 /* VKMovieDetailsVC.m in Sources */,
 				2F45864F196827F000960F5C /* VKMenuVC.m in Sources */,
 				2FE5CB051969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld in Sources */,
 				2FE5CB0B1969A71800BAD52B /* VKMerge.m in Sources */,

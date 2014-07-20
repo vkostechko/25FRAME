@@ -15,6 +15,7 @@
 
 @implementation VKMovie
 
+@dynamic movieDescription;
 @dynamic bestTorrentQuality;
 @dynamic duration;
 @dynamic movieID;

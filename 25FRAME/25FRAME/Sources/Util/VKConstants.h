@@ -18,6 +18,10 @@
 #define VC_ID_MAIN_NAV @"VC_ID_MAIN_NAV"
 #define VC_ID_HOME @"VKHomeVC"
 
+#pragma mark - Segue
+
+#define SEGUE_ID_MOVIE_DETAILS @"SegueId_MovieDetails"
+
 #pragma mark - Menu 
 
 #define TAG_VIEW_MOVIES 100

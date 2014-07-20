@@ -10,6 +10,7 @@
 #import "VKMovieCell.h"
 #import "VKMovieCollectionViewCell.h"
 #import "VKMainMenuVC.h"
+#import "VKMovieDetailsVC.h"
 
 #define CELL_ID_TBVL(row) ((row == 0) ? CELL_ID_TOP_CELL : CELL_ID_MOVIE)
 #define CELL_ID_TOP_CELL @"CELL_ID_TOP_CELL"
@@ -20,7 +21,7 @@
 
 @property (nonatomic, strong) NSArray* movies;
 @property (weak, nonatomic) IBOutlet UITableView *tbvMovies;
-
+@property (nonatomic, strong) VKMovie* selectedMovie;
 - (IBAction)btnMenuDidTap:(id)sender;
 - (IBAction)btnMoviesDidTap:(id)sender;
 
@@ -61,6 +62,9 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqual:SEGUE_ID_MOVIE_DETAILS]) {
+        [((VKMovieDetailsVC*)segue.destinationViewController) setMovie:self.selectedMovie];
+    }
 }
 
 #pragma mark - IBActions
@@ -92,6 +96,13 @@
     return (indexPath.row == 0) ? 175.0f : 75.0f;
     
 }
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedMovie = self.movies[indexPath.row];
+    return indexPath;
+}
+
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
