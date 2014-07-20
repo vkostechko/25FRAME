@@ -39,7 +39,7 @@ static NSString * const kKeyProducer = @"producer";
 static NSString * const kKeyWriter = @"writer";
 
 static NSString* const kKeyGenreId = @"genreId";
-static NSString* const kKeyMovieId = @"movieId";
+static NSString* const kKeyMovieId = @"movieID";
 
 @interface VKPersistanceFacade ()
 

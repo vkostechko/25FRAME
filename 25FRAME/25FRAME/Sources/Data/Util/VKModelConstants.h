@@ -19,7 +19,7 @@ static NSString * const kMoviePosterURL = @"/films/<film_id>/poster/<width>.jpg"
 static NSString * const kActorPhotoURL = @"/persons/<person_id>/photo/60.jpg";
 static NSString * const kUserAvatarURL = @"/users/<user_id>/avatar/<width>.png";
 
-static NSString * const kBrowseMoviesURL = @"/films/browse";
+static NSString * const kBrowseMoviesURL = @"films/browse";
 static NSString * const kMoviesByIDURL = @"/films/";
 static NSString * const kSearchMoviesURL = @"/films/search";
 static NSString * const kSearchMoviesByFileURL = @"/films/search-by-file";

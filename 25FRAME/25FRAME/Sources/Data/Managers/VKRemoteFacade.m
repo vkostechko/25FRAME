@@ -63,7 +63,7 @@ SINGLETON(VKRemoteFacade)
     [params addEntriesFromDictionary:[self dictionaryForParameter:kKeyMoviesQueryMask andValue:@45]];
     [params addEntriesFromDictionary:[self dictionaryForParameter:kKeyLimit andValue:@10]];
     
-    [self sendGETRequest:@"films/browse" parameters:params callback:completion];
+    [self sendGETRequest:kBrowseMoviesURL parameters:params callback:completion];
     
 }
 
