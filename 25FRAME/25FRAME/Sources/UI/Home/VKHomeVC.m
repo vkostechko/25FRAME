@@ -37,12 +37,8 @@
     // Do any additional setup after loading the view.
     [((VKMainMenuVC*)self.slideMenuController) setMenuDelegate:self];
 
-#warning - temp implementation for testing
-    [[VKRemoteFacade instance]loadMoviesWithCompletion:^(id data, NSError *error) {
-        NSArray* moviesArray = [[VKDataHelper instance]arrayFromJsonData:data];
-        [[VKPersistanceFacade instance]saveMoviesWithData:moviesArray andCompletionBlock:^(BOOL success, NSError *error) {
-            NSArray* movies = [[VKPersistanceFacade instance]allMovies];
-        }];
+    [[VKDataProvider instance]loadGenresWithCompletion:^(NSArray *results, NSError *error) {
+        //TODO: update UI with new data 
     }];
     
 }

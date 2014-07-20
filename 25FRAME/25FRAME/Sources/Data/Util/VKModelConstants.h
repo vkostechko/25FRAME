@@ -25,7 +25,7 @@ static NSString * const kSearchMoviesURL = @"/films/search";
 static NSString * const kSearchMoviesByFileURL = @"/films/search-by-file";
 static NSString * const kMoviesLookUpURL = @"/films/lookup";
 
-static NSString * const kGenresURL = @"/genres";
+static NSString * const kGenresURL = @"genres";
 static NSString * const kCountriesURL = @"/countries";
 static NSString * const kLanguagesURL = @"/languages";
 static NSString * const kTrackersURL = @"/trackers";

@@ -31,4 +31,11 @@
  */
 - (void)loadMoviesWithCompletion:(CallbackWithDataAndError)completion;
 
+/**
+ *  Loads list of available genres.
+ *
+ *  @param completion The CallbackWithDataAndError object used to handle request finishing.
+ */
+- (void)loadListOfGenresWithCompletion:(CallbackWithDataAndError)completion;
+
 @end

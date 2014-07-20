@@ -17,7 +17,6 @@
     #import "VKConstants.h"
     #import "VKMacros.h"
 
-    #import "VKPersistanceFacade.h"
-    #import "VKRemoteFacade.h"
+    #import "VKDataProvider.h"
 
 #endif

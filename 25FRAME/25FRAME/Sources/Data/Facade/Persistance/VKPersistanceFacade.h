@@ -21,4 +21,7 @@ typedef void (^FetchActionsCompletionHandler)(NSArray *userActions, NSArray *oth
 - (void)saveMoviesWithData:(NSArray*)data andCompletionBlock:(VKPersistenceCompletionHandler)completion;
 - (NSArray*)allMovies;
 
+- (void)saveGenresWithData:(NSArray*)data andCompletionBlock:(VKPersistenceCompletionHandler)completion;
+- (NSArray*)allGenres;
+
 @end

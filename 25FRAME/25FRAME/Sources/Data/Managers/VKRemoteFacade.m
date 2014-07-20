@@ -57,13 +57,20 @@
 
 SINGLETON(VKRemoteFacade)
 
-
+#pragma mark - Movies
 - (void)loadMoviesWithCompletion:(CallbackWithDataAndError)completion {
     
     [self sendGETRequest:@"films/browse" parameters:[self dictionaryForParameter:@"limit" andValue:@"41"] callback:completion];
     
 }
 
+#pragma mark - Genres 
+
+- (void)loadListOfGenresWithCompletion:(CallbackWithDataAndError)completion {
+    
+    [self sendGETRequest:kGenresURL parameters:nil callback:completion];
+    
+}
 
 #pragma mark - Private
 

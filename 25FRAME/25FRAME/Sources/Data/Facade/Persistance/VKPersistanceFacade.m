@@ -9,12 +9,16 @@
 #import "VKPersistanceFacade.h"
 #import "VKMerge.h"
 #import "VKMovie.h"
+#import "VKGenre.h"
 
 static NSString * const kKeyID = @"id";
+static NSString * const kKeyName = @"name";
 
 @implementation VKPersistanceFacade
 
 SINGLETON(VKPersistanceFacade)
+
+#pragma mark - Movies
 
 - (void)saveMoviesWithData:(NSArray *)data andCompletionBlock:(VKPersistenceCompletionHandler)completion {
     
@@ -45,5 +49,33 @@ SINGLETON(VKPersistanceFacade)
 - (NSArray*)allMovies {
     return [VKMovie MR_findAllSortedBy:@"movieID" ascending:NO];
 }
+
+
+#pragma mark - Genres
+
+- (void)saveGenresWithData:(NSArray*)data andCompletionBlock:(VKPersistenceCompletionHandler)completion {
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
+        NSArray* localGenres = [VKGenre MR_findAllInContext:localContext];
+        
+        [VKMerge mergeEntities:localGenres fromArray:data withCompare:^NSComparisonResult(VKGenre* genre, id data) {
+            return [genre.genreId compare:data[kKeyID]];
+        } withCreate:^id(id data) {
+            VKGenre* genre = [VKGenre MR_createInContext:localContext];
+            genre.genreId = data[kKeyID];
+            return genre;
+        } withUpdate:^(VKGenre* genre, id data) {
+            genre.name = data[kKeyName];
+        } withDelete:^(id entity) {
+            //do nothing
+        }];
+        
+    }completion:completion];
+}
+
+- (NSArray*)allGenres {
+    NSArray* allGenres = [VKGenre MR_findAllSortedBy:kKeyName ascending:YES];
+    return allGenres;
+}
+
 
 @end
