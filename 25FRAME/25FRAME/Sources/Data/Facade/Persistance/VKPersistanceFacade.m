@@ -38,6 +38,9 @@ static NSString * const kKeyOperator = @"operator";
 static NSString * const kKeyProducer = @"producer";
 static NSString * const kKeyWriter = @"writer";
 
+static NSString* const kKeyGenreId = @"genreId";
+static NSString* const kKeyMovieId = @"movieId";
+
 @interface VKPersistanceFacade ()
 
 - (void)createAndAddParticipantsToMovie:(VKMovie*)movie withData:(NSArray*)data type:(MovieParticipantType)type inContext:(NSManagedObjectContext*)context;
@@ -57,17 +60,12 @@ SINGLETON(VKPersistanceFacade)
     
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
         NSArray *localMovies = [VKMovie MR_findAllInContext:localContext];
-        
-        for (VKMovie* m in localMovies) {
-            NSLog(@"%@", m.movieID);
-        }
-        
+    
         [VKMerge mergeEntities:localMovies fromArray:data withCompare:^NSComparisonResult(VKMovie* movie, id data) {
             NSComparisonResult result = [movie.movieID compare:data[kKeyID]];
             return result;
         } withCreate:^id(id data) {
             VKMovie *movie = [VKMovie MR_createInContext:localContext];
-            NSLog(@"%@",data[kKeyID]);
             movie.movieID = data[kKeyID];
             return movie;
         } withUpdate:^(VKMovie* movie, id data) {
@@ -134,7 +132,7 @@ SINGLETON(VKPersistanceFacade)
 }
 
 - (NSArray*)allMovies {
-    return [VKMovie MR_findAllSortedBy:@"movieID" ascending:NO];
+    return [VKMovie MR_findAllSortedBy:kKeyMovieId ascending:NO];
 }
 
 
@@ -194,7 +192,7 @@ SINGLETON(VKPersistanceFacade)
 }
 
 - (VKGenre*)genreById:(NSNumber*)genreId inContext:(NSManagedObjectContext*)context {
-    VKGenre* genre = [VKGenre MR_findFirstByAttribute:@"genreId" withValue:genreId inContext:context];
+    VKGenre* genre = [VKGenre MR_findFirstByAttribute:kKeyGenreId withValue:genreId inContext:context];
     return genre;
 }
 
