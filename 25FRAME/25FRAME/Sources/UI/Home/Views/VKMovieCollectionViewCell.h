@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VKMovie.h"
 
 @interface VKMovieCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic, strong) VKMovie* movie;
 
 @end

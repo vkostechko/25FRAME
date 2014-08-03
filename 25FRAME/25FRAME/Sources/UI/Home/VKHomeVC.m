@@ -12,15 +12,21 @@
 #import "VKMainMenuVC.h"
 #import "VKMovieDetailsVC.h"
 
-#define CELL_ID_TBVL(row) ((row == 0) ? CELL_ID_TOP_CELL : CELL_ID_MOVIE)
 #define CELL_ID_TOP_CELL @"CELL_ID_TOP_CELL"
 #define CELL_ID_MOVIE @"CELL_ID_Movie"
 #define CELL_ID_MOVIECOLLECTIONVIEW @"CELL_ID_MovieCollectionView"
 
+#define ANIMATION_DURATION 0.5f
+
 @interface VKHomeVC ()<UITableViewDataSource, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, VKMenuDelegate>
 
 @property (nonatomic, strong) NSArray* movies;
+@property (nonatomic, strong) NSArray* tvSeries;
+
 @property (weak, nonatomic) IBOutlet UITableView *tbvMovies;
+@property (weak, nonatomic) IBOutlet UICollectionView *clvTVSeries;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *clvTVSeriesTopSpacing;
+
 @property (nonatomic, strong) VKMovie* selectedMovie;
 - (IBAction)btnMenuDidTap:(id)sender;
 - (IBAction)btnMoviesDidTap:(id)sender;
@@ -37,9 +43,14 @@
     // Do any additional setup after loading the view.
     [((VKMainMenuVC*)self.slideMenuController) setMenuDelegate:self];
 
-    [[VKDataProvider instance]loadMoviesWithCompletion:^(NSArray *movies, NSError *error) {
-        self.movies = movies;
+    [[VKDataProvider instance]loadTVSeriesWithCompletion:^(NSArray *tvSeries, NSError *error) {
+        self.tvSeries = tvSeries;
+        [[VKDataProvider instance]loadMoviesWithCompletion:^(NSArray *movies, NSError *error) {
+            self.movies = movies;
+        }];
     }];
+    
+    
     
 }
 
@@ -58,6 +69,12 @@
     }
 }
 
+- (void)setTvSeries:(NSArray *)tvSeries {
+    if (_tvSeries != tvSeries) {
+        _tvSeries = tvSeries;
+        [self.clvTVSeries reloadData];
+    }
+}
 
 #pragma mark - Navigation
 
@@ -82,18 +99,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString* cellID = CELL_ID_TBVL(indexPath.row);
-    VKMovieCell* cell = (VKMovieCell*)[tableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
-    if (indexPath.row > 0) {
-        [cell setMovie:self.movies[indexPath.row]];
-    }
-    
+    VKMovieCell* cell = (VKMovieCell*)[tableView dequeueReusableCellWithIdentifier:CELL_ID_MOVIE forIndexPath:indexPath];
+    [cell setMovie:self.movies[indexPath.row]];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return (indexPath.row == 0) ? 175.0f : 75.0f;
+    return 75.0f;
     
 }
 
@@ -106,17 +119,31 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning - stub data
-    return 10;
+    return self.tvSeries.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     VKMovieCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CELL_ID_MOVIECOLLECTIONVIEW forIndexPath:indexPath];
+    cell.movie = self.tvSeries[indexPath.row];
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
+- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.selectedMovie = self.tvSeries[indexPath.row];
+    return YES;
+}
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.tbvMovies) {
+        CGPoint offset = scrollView.contentOffset;
+        CGFloat newTopOffset = (offset.y >= 25.0) ? - CGRectGetHeight(self.clvTVSeries.frame) : 0.0f;
+        [UIView animateWithDuration:ANIMATION_DURATION animations:^{
+            self.clvTVSeriesTopSpacing.constant = newTopOffset;
+            [self.view layoutIfNeeded];
+        }];
+    }
+}
 
 #pragma mark - VKMenuDelegate
 

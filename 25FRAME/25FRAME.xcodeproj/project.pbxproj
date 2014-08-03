@@ -25,6 +25,7 @@
 		2F7853051956F1E4009CCE48 /* VKPersistanceFacade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F7853041956F1E4009CCE48 /* VKPersistanceFacade.m */; };
 		2F78530D1956FD9F009CCE48 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F78530C1956FD9F009CCE48 /* Localizable.strings */; };
 		2F78531C19571562009CCE48 /* VKDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F78531B19571562009CCE48 /* VKDataHelper.m */; };
+		2FC93FDE198E943300352EF4 /* VKAlertViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FC93FDD198E943300352EF4 /* VKAlertViewManager.m */; };
 		2FE5CAF5196971E900BAD52B /* VKMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CAF4196971E900BAD52B /* VKMenuCell.m */; };
 		2FE5CAF91969806200BAD52B /* VKHomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5CAF81969806200BAD52B /* VKHomeVC.m */; };
 		2FE5CAFB1969885400BAD52B /* StubImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FE5CAFA1969885400BAD52B /* StubImages.xcassets */; };
@@ -94,6 +95,8 @@
 		2F785310195709BA009CCE48 /* VKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMacros.h; sourceTree = "<group>"; };
 		2F78531A19571562009CCE48 /* VKDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKDataHelper.h; sourceTree = "<group>"; };
 		2F78531B19571562009CCE48 /* VKDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKDataHelper.m; sourceTree = "<group>"; };
+		2FC93FDC198E943300352EF4 /* VKAlertViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAlertViewManager.h; sourceTree = "<group>"; };
+		2FC93FDD198E943300352EF4 /* VKAlertViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAlertViewManager.m; sourceTree = "<group>"; };
 		2FE5CAF3196971E900BAD52B /* VKMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKMenuCell.h; sourceTree = "<group>"; };
 		2FE5CAF4196971E900BAD52B /* VKMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKMenuCell.m; sourceTree = "<group>"; };
 		2FE5CAF71969806200BAD52B /* VKHomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKHomeVC.h; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 		2F7852F81956ED8B009CCE48 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				2FC93FDC198E943300352EF4 /* VKAlertViewManager.h */,
+				2FC93FDD198E943300352EF4 /* VKAlertViewManager.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 				2F45864F196827F000960F5C /* VKMenuVC.m in Sources */,
 				2FE5CB051969A44D00BAD52B /* 25FrameDataModel.xcdatamodeld in Sources */,
 				2FE5CB0B1969A71800BAD52B /* VKMerge.m in Sources */,
+				2FC93FDE198E943300352EF4 /* VKAlertViewManager.m in Sources */,
 				2FE5CAFF1969899600BAD52B /* VKMovieCell.m in Sources */,
 				2F78531C19571562009CCE48 /* VKDataHelper.m in Sources */,
 				2FE5CAF5196971E900BAD52B /* VKMenuCell.m in Sources */,

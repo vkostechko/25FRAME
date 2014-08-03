@@ -5,3 +5,9 @@
   Created by Vyacheslav Kostechko on 6/22/14.
   Copyright (c) 2014 Vyacheslav Kostechko. All rights reserved.
 */
+
+"ALERT_TITLE_ERROR" = "Ошибка";
+"ALERT_TITLE_OFFLINE" = "Ошибка сети";
+
+"ALERT_MSG_OFFLINE" = "Проверьте подключение к сети";
+"ALERT_MSG_SERVER_ERROR" = "Не удается получить данные с сервера";

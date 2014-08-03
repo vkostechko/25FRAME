@@ -14,6 +14,9 @@
 #import "VKDeviceHardwareHelper.h"
 #import "VKDataHelper.h"
 
+#import "VKAlertViewManager.h"
+
+
 @interface VKDataProvider ()
 
 @property (nonatomic, assign) BOOL isNetworkReachable;
@@ -52,6 +55,7 @@ SINGLETON(VKDataProvider)
                 [[VKPersistanceFacade instance]saveMoviesWithData:moviesData andCompletionBlock:^(BOOL success, NSError *error) {
                    
                     if (error) {
+                        [[VKAlertViewManager instance]showLoadingMoviesErrorAlertView];
                         //TODO: handle error
                     }else {
                         [self loadLocalMoviesWithCompletion:completion];
@@ -65,6 +69,32 @@ SINGLETON(VKDataProvider)
         [self loadLocalMoviesWithCompletion:completion];
     }
         
+    
+}
+#pragma mark TV Series
+
+- (void)loadTVSeriesWithCompletion:(DataProviderCompletionHandler)completion {
+    if (self.isNetworkReachable) {
+        [[VKRemoteFacade instance]loadTVSeriesWithCompletion:^(id data, NSError *error) {
+            if (error) {
+                [[VKAlertViewManager instance]showLoadingMoviesErrorAlertView];
+                //TODO: handle error
+            }else {
+                NSArray* moviesData = [[VKDataHelper instance]arrayFromJsonData:data];
+                [[VKPersistanceFacade instance]saveMoviesWithData:moviesData andCompletionBlock:^(BOOL success, NSError *error) {
+                    
+                    if (error) {
+                        //TODO: handle error
+                    }else {
+                        [self loadLocalMoviesWithCompletion:completion];
+                    }
+                    
+                }];
+            }
+            
+            
+        }];
+    }
     
 }
 

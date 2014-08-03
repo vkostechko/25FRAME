@@ -15,6 +15,7 @@ typedef void (^DataProviderCompletionHandler)(NSArray *results, NSError *error);
 + (VKDataProvider*)instance;
 
 - (void)loadMoviesWithCompletion:(DataProviderCompletionHandler)completion;
+- (void)loadTVSeriesWithCompletion:(DataProviderCompletionHandler)completion;
 
 - (void)loadGenresWithCompletion:(DataProviderCompletionHandler)completion;
 

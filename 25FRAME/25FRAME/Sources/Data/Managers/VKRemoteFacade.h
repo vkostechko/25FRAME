@@ -31,6 +31,8 @@
  */
 - (void)loadMoviesWithCompletion:(CallbackWithDataAndError)completion;
 
+- (void)loadTVSeriesWithCompletion:(CallbackWithDataAndError)completion;
+
 /**
  *  Loads list of available genres.
  *

@@ -67,6 +67,19 @@ SINGLETON(VKRemoteFacade)
     
 }
 
+#pragma mark - TV Series
+
+- (void)loadTVSeriesWithCompletion:(CallbackWithDataAndError)completion {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    [params addEntriesFromDictionary:[self dictionaryForParameter:kKeyMoviesQueryMask andValue:@47]];
+    [params addEntriesFromDictionary:[self dictionaryForParameter:kKeyLimit andValue:@10]];
+    [params addEntriesFromDictionary:[self dictionaryForParameter:kKeytype andValue:@"series"]];
+    
+    [self sendGETRequest:kBrowseMoviesURL parameters:params callback:completion];
+    
+}
+
+
 #pragma mark - Genres 
 
 - (void)loadListOfGenresWithCompletion:(CallbackWithDataAndError)completion {

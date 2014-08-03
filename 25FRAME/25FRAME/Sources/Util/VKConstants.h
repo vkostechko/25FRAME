@@ -21,6 +21,7 @@
 #pragma mark - Segue
 
 #define SEGUE_ID_MOVIE_DETAILS @"SegueId_MovieDetails"
+#define SEGUE_ID_TVSERIES_DETAILS @"SegueId_TVSeriesDetails"
 
 #pragma mark - Menu 
 

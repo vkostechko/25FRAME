@@ -7,25 +7,43 @@
 //
 
 #import "VKMovieCollectionViewCell.h"
+#import "SDWebImageManager.h"
+
+@interface VKMovieCollectionViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgvPoster;
+@property (weak, nonatomic) IBOutlet UILabel *lblMovieName;
+
+- (void)refreshUI;
+
+@end
 
 @implementation VKMovieCollectionViewCell
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+#pragma mark - Override setters
+
+- (void)setMovie:(VKMovie *)movie {
+    if (_movie != movie) {
+        _movie = movie;
+        [self refreshUI];
     }
-    return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+#pragma mark - Private
+
+- (void)refreshUI {
+
+    self.lblMovieName.text = self.movie.name;
+    NSURL* posterURL = [self.movie posterURLWithWidth:(MoviePosterWidth207)];
+    [[SDWebImageManager sharedManager]downloadWithURL:posterURL
+                                              options:SDWebImageProgressiveDownload
+                                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {}
+                                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
+                                                self.imgvPoster.image = image;
+                                                [self setNeedsLayout];
+                                            }];
+
+    
 }
-*/
 
 @end
